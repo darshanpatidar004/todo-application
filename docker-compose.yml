@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - backend_data:/app/data
+    environment:
+      - DATABASE_URL=sqlite:///./data/todo.db
+      - SECRET_KEY=YOUR_PRODUCTION_SECRET_KEY
+    restart: always
+
+volumes:
+  backend_data:
