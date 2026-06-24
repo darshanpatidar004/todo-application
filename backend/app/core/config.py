@@ -1,8 +1,13 @@
 from pydantic_settings import BaseSettings
 from typing import List
 import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file if it exists
+load_dotenv()
 
 class Settings(BaseSettings):
+
     PROJECT_NAME: str = "Todo App API"
     API_V1_STR: str = "/api/v1"
     SECRET_KEY: str = os.getenv("SECRET_KEY", "YOUR_SUPER_SECRET_KEY_CHANGE_ME")
