@@ -11,3 +11,6 @@ services:
         generateValue: true
       - key: DATABASE_URL
         value: sqlite:///./todo.db
+      - key: PYTHON_VERSION
+        value: 3.11.9
+
